@@ -15,7 +15,8 @@ This is a full-featured BookStore web application built using **ASP.NET Core MVC
 
 ## Video Overview
 
-[Watch the project overview video]
+[Watch the project overview video](https://github.com/user-attachments/assets/7d9218a3-a4de-4aae-901b-76ef0d6b9f7c)
+
 
 
 ## Key Features
