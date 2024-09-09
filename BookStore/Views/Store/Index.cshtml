@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BookStore.Models.Book>
+
+@{
+    ViewData["Title"] = "Store";
+}
+<h1 class="details-title">Store</h1>
+
+<!-- Add the full-screen background image class -->
+<div class="full-screen-background"></div>
+
+<div class="content-overlay">
+  
+
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-3">
+                <div class="card my-2 store-card">
+                    <a class="a-cleanup" asp-controller="Store" asp-action="Details" asp-route-id="@book.Id">
+                    
+                    <div class="card">
+                            <img src="@book.CoverImageUrl" class="card-img-top card-img-custom" alt="Book cover">
+                            <div class="card-body p-2 custom-body-bg">
+                                <h5 class="mb-3 text-truncate">@book.Title</h5>
+                            </div>
+                            <div class="card-body p-2 custom-body-bg">
+                                <h6 class="card-text">@book.Language</h6>
+                            </div>
+                            <div class="card-body p-2 custom-body-bg">
+                                <span class="card-text">@book.Category</span>
+                            </div>
+                            <div class="card-body p-2 custom-body-bg d-flex justify-content-between align-items-center">
+                                <span class="card-text">@book.Price.ToString("c")</span>
+                                <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@book.Id" class="btn btn-primary store-btn">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
